@@ -1,7 +1,7 @@
 public class Animal{
     private String gender;
-
     private String name;
+    
     public String species;
 
     public Animal(String animalName, String species, String gender) {

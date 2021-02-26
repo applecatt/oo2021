@@ -4,63 +4,70 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Vector<String> vector = new Vector<>();
+        Vector<String> events = new Vector<>();
 
-        vector.add("Comms");
-        vector.add("Solved");
-        vector.add(0, "Keep");
+        String str1 = "Linna minek";
+        System.out.println(str1);
+        String str2 = "Hotelli naasmine";
+        System.out.println(str2);
+        String str3 = "Hotelli saabumine";
+        System.out.println(str3);
 
-        System.out.println(vector);
+        events.add(str1);
+        events.add(str2);
+        events.add(0, str3);
 
-        vector.remove(2);
+        System.out.println(events);
 
-        System.out.println(vector);
+        events.remove(0);
+
+        System.out.println(events);
         
-        HashSet<String> hashset = new HashSet<String>();
+        HashSet<String> guestlist = new HashSet<String>();
 
-        hashset.add("Mercantile");
-        hashset.add("Solution");
-        hashset.add("Development");
-        hashset.add("Procedure");
-        hashset.add("Procedure");
-        for (String i : hashset){
+        guestlist.add("Külaline 1");
+        guestlist.add("Külaline 2");
+        guestlist.add("Külaline 3");
+        guestlist.add("Külaline 2");
+        guestlist.add("Külaline 4");
+        for (String i : guestlist){
             System.out.println(i);
         }
 
-        hashset.remove("Development");
-        for (String i : hashset){
+        guestlist.remove("Külaline 1");
+        for (String i : guestlist){
             System.out.println(i);
         }
 
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> shoppinglist = new HashMap<String, String>();
 
-        map.put("43", "Denmark");
-        map.put("56", "France");
-        map.put("23", "Hagen");
-        map.put("78", "London");
+        shoppinglist.put("2-4", "tomatit");
+        shoppinglist.put("1", "piim");
+        shoppinglist.put("2", "juustu");
+        shoppinglist.put("3", "mandariini");
 
         
-        System.out.println(map.get("78"));
-        System.out.println(map.get("23"));
+        System.out.println(shoppinglist.get("3"));
+        System.out.println(shoppinglist.get("1"));
     
 
-        map.remove("43");
+        shoppinglist.remove("2-4");
 
-        System.out.println(map.get("43"));
+        System.out.println(shoppinglist.get("2"));
         
-        for (String i : map.values()){
+        for (String i : shoppinglist.values()){
             System.out.println(i);
         }
         
-        for (String i : map.keySet()){
+        for (String i : shoppinglist.keySet()){
             System.out.println(i);
         }
-        map.clear();
-        for (String i : map.keySet()){
+        shoppinglist.clear();
+        for (String i : shoppinglist.keySet()){
             System.out.println(i);
 
         /* Vector muudab järjekorda liikmete eemaldamisel, 
-        set liiikmed ühekordsed, map mitu liiget kirjes, key*/
+        Seti liiikmed ühekordsed, Mapi mitu liiget ühes kirjes võtmega*/
         }
     }
 }

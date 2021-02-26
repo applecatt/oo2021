@@ -9,7 +9,7 @@ public class Game {
 
     Inventory inventory = new Inventory(5);
 
-    GameCharacter player = new GameCharacter("Keegi", 18, 2, 'C', GameCharacterType.WIZARD);
+    GameCharacter player = new GameCharacter("Harry", 18, 2, 'C', GameCharacterType.WIZARD);
     GameCharacter dummy = new GameCharacter("Dummy", 5, 6, 'D', GameCharacterType.WIZARD);
     GameCharacter witch = new GameCharacter("Witch", 8, 9, '?', GameCharacterType.WIZARD);
 
