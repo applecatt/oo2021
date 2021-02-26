@@ -1,42 +1,69 @@
+import java.lang.Integer;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Pet{
-    
     public static void main(String[] args){
-
-        System.out.println("Kas soovid võtta uue looma?(y/n)");
-        
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-
+        
         boolean hunger = false;
         String species = "";
+        String gender = "";
+        
+        ArrayList<Animal> animal = new ArrayList();
 
-        if (input.equals("y")){
+        System.out.println("Mitu looma soovid võtta?");
+        String input = scanner.nextLine();
+        int num = Integer.parseInt(input);
+        for (int i = 0; i < num; i++){
             System.out.println("Mis on looma liik?");
             species = scanner.nextLine();
-            System.out.println("Kas loom on näljane?(y/n)");
-            if (input.equals("y")){
-                hunger = true;
-            }
-            Animal animal = new Animal(species, hunger);
+            System.out.println("Mis soost loom on?(m/n)");
+            gender = scanner.nextLine();
+            animal.add(new Animal("animal" + Integer.toString(i), species, gender));
             System.out.println("Mis on looma nimi?");
             String name = scanner.nextLine();
-            animal.setName(name);
-            System.out.println("Kas soovid looma nime muuta?");
-
-            if (input.equals("y")){
-                System.out.println("Sisesta uus nimi:");
-                String newname = scanner.nextLine();
-                animal.setName(newname);
-            }
-            if (animal.getIsHungry()){
-                System.out.println("Loom on näljane");
-            }
-            else{
-                System.out.println("Loom ei ole näljane");
-            }
+            (animal.get(i)).setName(name);
         }
 
+        System.out.println("Kas soovid looma atribuute muuta?");
+        input = scanner.nextLine();
+        if (input.equals("y")){
+            System.out.println("Vali loom:");
+            System.out.println(animal);
+            int number = -1 + Integer.parseInt(scanner.nextLine());
+
+            if (animal.size() > number){
+                System.out.println("Kas soovid looma nime muuta?");
+                input = scanner.nextLine();
+                if (input.equals("y")){
+                    System.out.println("Sisesta uus nimi:");
+                    String newname = scanner.nextLine();
+                    (animal.get(number)).setName(newname);
+                }
+            } else {
+                System.out.println("Sellist looma pole olemas!");
+            }
+            System.out.println("Kas soovid vaadata looma infot?");
+            input = scanner.nextLine();
+                if (input.equals("y")){
+                System.out.println("Vali loom:");
+                System.out.println(animal);
+                int number2 = -1 + Integer.parseInt(scanner.nextLine());
+
+                if (animal.size() > number){
+                    System.out.println((animal.get(number)).species);
+                    System.out.println((animal.get(number)).getName());
+                    String gen = (animal.get(number)).getGender();
+                    if (gen.equals("n")){
+                        System.out.println("Loom on emane.");
+                    } else if (gen.equals("m")){
+                        System.out.println("Loom on isane.");
+                    }
+                } else {
+                System.out.println("Sellist looma pole olemas!");
+                }
+            } 
+        }
     }
 }
