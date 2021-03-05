@@ -3,7 +3,7 @@ public class GameCharacter {
   public int y;
   public String name;
   private char symbol;
-  public boolean isvisible;
+  public boolean isVisible = true;
 
   private Direction direction;
 
@@ -13,13 +13,14 @@ public class GameCharacter {
     this.name = name;
     this.gameCharacterType = gameCharacterType;
     this.direction = Direction.RIGHT;
+    this.symbol = symbol;
 
     this.x = x;
     this.y = y;
   }
 
   public char getSymbol(){
-    return this.symbol;
+    return symbol;
   }
 
   public void setDirection(Direction d){
