@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 
 public class FileReadWrite {
     public static void main(String[] args) {
-        File file = new File(dummy.txt);
+        File file = new File("dummy.txt");
         File filewrite = new File("1.txt");
         /*System.out.println(
             file.getname() + "\n" +
@@ -52,10 +52,10 @@ public class FileReadWrite {
                 " and year is " + lineData[3]
             );
 
-            scanner.clse();
+            scanner.close();
             pw.close();
 
-            //Loete sisse numberid afailsit ja lieiate summa 
+            //Lugege sisse numberid failist ja leidke summa 
         }
     }
 }
