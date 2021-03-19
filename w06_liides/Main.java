@@ -2,23 +2,23 @@ public class Main {
     public static void main(String[] args) {
         EstonianID estonian = new EstonianID("39608240216");
 
-        System.out.println(estonian.getGender());
-        System.out.println(estonian.getFullYear());
-        System.out.println(estonian.getDOB());
-        System.out.println(estonian.getAge());
-        System.out.println(estonian.getMonth());
-        System.out.println(estonian.getDay());
-        System.out.println(estonian.untilNextBirthday());
+        System.out.println("Sugu on:"+estonian.getGender());
+        System.out.println("Sünniaasta on :"+estonian.getFullYear());
+        System.out.println("Sünnikuupäev on :"+estonian.getDOB());
+        System.out.println("Vanus on :"+estonian.getAge());
+        System.out.println("Sünnikuu on :"+estonian.getMonth());
+        System.out.println("Sünnipäev on :"+estonian.getDay());
+        System.out.println("Järgmise sünnipäevani on :"+estonian.untilNextBirthday());
 
-        FinnishID finnish = new FinnishID("130293-003K");
+        FinnishID finnish = new FinnishID("230181-237J");
 
-        System.out.println(finnish.getGender());
-        System.out.println(finnish.getFullYear());
-        System.out.println(finnish.getDOB());
-        System.out.println(finnish.getAge());
-        System.out.println(finnish.getMonth());
-        System.out.println(finnish.getDay());
-        System.out.println(finnish.untilNextBirthday());
+        System.out.println("Sugu on:"+finnish.getGender());
+        System.out.println("Sünniaasta on :"+finnish.getFullYear());
+        System.out.println("Sünnikuupäev on :"+finnish.getDOB());
+        System.out.println("Vanus on :"+finnish.getAge());
+        System.out.println("Sünnikuu on :"+finnish.getMonth());
+        System.out.println("Sünnipäev on :"+finnish.getDay());
+        System.out.println("Järgmise sünnipäevani on :"+finnish.untilNextBirthday());
 
         Cat cat = new Cat("Miisu");
         

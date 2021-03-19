@@ -25,12 +25,14 @@ public class EstonianID implements PersonalCodeBehaviour{
 
     @Override
     public String getDOB() {
-        String dob = code.substring(5, 7)+"."+code.substring(3, 5)+"."+ Integer.toString(getFullYear());
+        String dob = Integer.toString(getFullYear())+"-"+code.substring(3, 5)+"-"+code.substring(5, 7);
         return dob;
     }
     @Override
     public int getAge() {
-        int age = 2021-getFullYear();
+        LocalDate date = LocalDate.now();
+        String dat = String.valueOf(date);
+        int age = Integer.parseInt(dat.substring(0, 4))-getFullYear();
         return age;
     }
     @Override
