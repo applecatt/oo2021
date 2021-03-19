@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class EstonianID implements PersonalCodeBehaviour{
     public String code;
 
@@ -30,6 +32,27 @@ public class EstonianID implements PersonalCodeBehaviour{
     public int getAge() {
         int age = 2021-getFullYear();
         return age;
+    }
+    @Override
+    public String getMonth() {
+        String[] months = new String[]{"jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"};
+        String month = months[Integer.parseInt(code.substring(3, 5))-1];
+        return month;
+    }
+    @Override
+    public int getDay() {
+        int day = Integer.parseInt(code.substring(5, 7));
+        return day;
+    }
+    @Override
+    public int untilNextBirthday() {
+        LocalDate date = LocalDate.now();
+        String dat = String.valueOf(date);
+        int unb = (Integer.parseInt(code.substring(3, 5))*30+Integer.parseInt(code.substring(5, 7))+365)-(Integer.parseInt(dat.substring(5,7))*30+Integer.parseInt(dat.substring(8,10)));
+        if(unb>365){
+            unb-=365;
+        }
+        return unb;
     }
     
 }

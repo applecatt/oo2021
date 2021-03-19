@@ -1,50 +1,47 @@
-package Homework;
-
 import java.util.Random;
 
 public class Cat implements Animal{
     public String name;
 
+    public Cat(String name){
+        name = this.name;
+    }
+
     @Override
     public String speak() {
-        String call = "Meow!";
+        String call = "Kass mäugub!";
         return call;
     }
 
     @Override
     public String eat() {
         Random r = new Random();
-        String[] = new String[]{"chicken", "catches a bird outside", "ruins carpet"};
-        return ;
+        String[] food = new String[]{"sööb kana", "püüab linnu", "rikub vaiba ära"};
+        return ("Kass "+food[r.nextInt(3)]+"!");
     }
 
     @Override
     public String sleep() {
-        // TODO Auto-generated method stub
-        return null;
+        return("Kass magab!");
     }
 
     @Override
     public String beSneaky() {
-        // TODO Auto-generated method stub
-        return null;
+        return("*krõks*");
     }
 
     @Override
     public String lookAround() {
-        // TODO Auto-generated method stub
-        return null;
+        return("Kass vaatab ringi!");
     }
 
     @Override
     public String attack() {
-        // TODO Auto-generated method stub
-        return null;
+        return("Rrräugh!");
     }
 
     @Override
     public String defend() {
-        // TODO Auto-generated method stub
-        return null;
+        return("Rrr!");
     }
 }
