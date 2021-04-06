@@ -12,14 +12,16 @@ public class Hangman
 {
     public static int wrongGuess=0;
     private static String[] words = {"apple", "banana", "programming", "thunderstorm", "Terminator", "Slicer","Ninja", "cow", "Robot", "littlegirl"};
-    public String randomWord;
+    public static String randomWord = null;
     public static void main(String[] args) {
     
         System.out.println("Mängid poomismängu!");
 
         randomWord = getRandomWord();
 
-        System.out.println("")    
+        play();
+
+        System.out.println("")    ;
     }
     
 
@@ -30,6 +32,18 @@ public class Hangman
         String word = words[r.nextInt(words.length-1)];
         return word;
     }
+
+
+    public static void play(){
+        while(true){
+           String guessed = guess();
+        }
+        
+     }
+     public static String guess(){
+        Scanner scGuess = new Scanner(System.in);
+        return scGuess.nextLine();
+     }
 
     
 }
