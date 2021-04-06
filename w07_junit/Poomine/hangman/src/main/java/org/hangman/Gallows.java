@@ -10,7 +10,7 @@ public class Gallows {
                 image+="\n";
                 image+="\n";
                 image+="\n";
-                image+="__/"
+                image+="_/¯¯¯------/¯¯¯¯¯¯¯¯¯¯¯¯¯\-----\_____";
                 return image;
             case 1:
                 image+="\n";
@@ -18,6 +18,7 @@ public class Gallows {
                 image+="\n";
                 image+="|\n";
                 image+="|\n";
+                image+="_/¯¯¯------/¯¯¯¯¯¯¯¯¯¯¯¯¯\-----\_____";
                 return image;
             case 2:
                 image+="\n";
