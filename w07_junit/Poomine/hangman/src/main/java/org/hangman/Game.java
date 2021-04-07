@@ -9,7 +9,6 @@ public class Game implements Keyboard{
     private static int counter = 0;
     static Scanner scanner = new Scanner(System.in);
     private static String continu = "y";
-    private static String nullString = null;
     private static Hangman[] hangmans = new Hangman[100];
     private static Gallows[] gallowss = new Gallows[100];
     public static void main(String[] args) {
