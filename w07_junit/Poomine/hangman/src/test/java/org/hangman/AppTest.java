@@ -12,16 +12,6 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    static Game game;
-    /**
-     * Rigorous Test :-)
-     
-
-    @BeforeClass
-    public static void init(){
-        hangman = new Hangman();
-    }
-*/
     @Test
     public void shouldAnswerWithTrue()
     {
@@ -48,5 +38,27 @@ public class AppTest
         Hangman hangman = new Hangman();
         
         assertArrayEquals("Arrays must be equal", hangman.splitLength, hangman.getSplitLength());
+    }
+    @Test
+    public void inWordTest(){
+        String[] list = new String []{"a", "b", "c"};
+        String inString = "b";
+        assertTrue( Hangman.inWord(list, inString));
+        inString = "d";
+        assertTrue(! Hangman.inWord(list, inString));
+    }
+
+    @Test
+    public void gallowsTest(){
+        Gallows gallows = new Gallows();
+        int  testnumber = 4;
+        String image = "";
+        image+="              __\n";
+        image+="              |\n";
+        image+="              |\n";
+        image+="              |\n";
+        image+="              |\n";
+        image+="_/¯¯¯------/¯¯¯¯¯¯¯¯¯¯¯¯¯\\-----\\_____";
+        assertTrue(gallows.gallows(testnumber).equals(image));
     }
 }

@@ -14,9 +14,9 @@ public class Game implements Keyboard{
     public static void main(String[] args) {
         System.out.println("Mängid poomismängu!");
         game();
-        while(continu.equals("y")){
+        /*while(continu.equals("y")){
             quest();
-        }
+        }*/
     }
 
     public static void quest() {
@@ -50,7 +50,7 @@ public class Game implements Keyboard{
     }
 
     public static void render(Hangman hangman, Gallows gallows){
-        System.out.println(gallows.gallows(hangman.wrongGuess));
+        System.out.println(gallows.draw(hangman.wrongGuess));
         System.out.println("Vigu: "+hangman.wrongGuess+"/7");
         for (String s : hangman.getSplitLength()) {
             if (s!=null){

@@ -1,9 +1,9 @@
 package org.hangman;
 
-public class Gallows {
-    public String gallows(int wrongGuess){
+public class Gallows implements Draw{
+    public String draw(int num){
         String image = "";
-        switch(wrongGuess) {
+        switch(num) {
             case 0:
                 image+="              \n";
                 image+="              \n";
