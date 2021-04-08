@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 
-public class Game implements Keyboard{
+public class Game{
     private static int counter = 0;
     private static Scanner scanner = new Scanner(System.in);
     private static String continu = "y";

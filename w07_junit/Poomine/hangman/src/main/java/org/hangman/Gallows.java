@@ -1,6 +1,7 @@
 package org.hangman;
 
 public class Gallows implements Draw{
+    @Override
     public String draw(int num){
         String image = "";
         switch(num) {
