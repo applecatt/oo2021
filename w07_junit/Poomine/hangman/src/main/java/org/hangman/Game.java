@@ -19,14 +19,14 @@ public class Game{
         }*/
     }
 
-    public static void quest() {
+   /*public static void quest() {
         System.out.println("Kas soovid uuesti mängida?");
         continu = scanner.next();
         if (continu.equals("y")){   
             game();
         }    
     }
-
+    */
     public static void game() {
         hangmans[counter] = new Hangman();
         gallowss[counter] = new Gallows();
