@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Game implements Keyboard{
     private static int counter = 0;
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
     private static String continu = "y";
     private static Hangman[] hangmans = new Hangman[100];
     private static Gallows[] gallowss = new Gallows[100];
@@ -45,6 +45,8 @@ public class Game implements Keyboard{
             System.out.println("Võitsid!");
         }
         counter++;
+        System.out.println(counter);
+
     }
 
     public static void render(Hangman hangman, Gallows gallows){
@@ -62,10 +64,6 @@ public class Game implements Keyboard{
 
         
     }
-    @Override
-    public String getInput(char a) {
-        
-        return null;
-    }
+    
     
 }

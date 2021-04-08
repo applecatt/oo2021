@@ -40,7 +40,9 @@ public class Hangman{
    }
    public static String guess(){
       Scanner scGuess = new Scanner(System.in);
+      scGuess.close();
       return scGuess.next();
+      
    }
 
    public static boolean inWord(String[] list, String inString){
