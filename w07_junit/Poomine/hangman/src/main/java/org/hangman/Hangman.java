@@ -26,8 +26,8 @@ public class Hangman implements Keyboard{
    public static String[] splitLength = new String[word.length()];
    public static ArrayList<String> wrong = new ArrayList<String>();
 
-   public static void play(){
-      String guessed = guess();
+   public void play(){
+      String guessed = getInput();
       if(inWord(splitWord, guessed)){
          splitLength = fillList(splitWord, splitLength, guessed);
       }
@@ -38,13 +38,16 @@ public class Hangman implements Keyboard{
          }
       }
    }
+
    @Override
    public String getInput(){
       Scanner scGuess = new Scanner(System.in);
+      String guess = scGuess.next();
       scGuess.close();
-      return scGuess.next();
+      return guess;
       
    }
+
    public static boolean inWord(String[] list, String inString){
       for (String string : list) {
          if (string.equals(inString)){
