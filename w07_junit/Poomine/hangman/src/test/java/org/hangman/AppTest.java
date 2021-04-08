@@ -59,6 +59,6 @@ public class AppTest
         image+="              |\n";
         image+="              |\n";
         image+="_/¯¯¯------/¯¯¯¯¯¯¯¯¯¯¯¯¯\\-----\\_____";
-        assertTrue(gallows.gallows(testnumber).equals(image));
+        assertTrue(gallows.draw(testnumber).equals(image));
     }
 }
