@@ -1,16 +1,3 @@
-/*Soovitavalt 3 liikmelise võistkonnana (võib 2 ka)
-teha mingisugune mäng (sõnamäng, trips-traps-trull),
-kus oleksid olemas interface, testid, mänguloogika 
-(kus on implementitud interface) ja mängu 
-realiseeriv rakendus (mingisugune klass,
-kus main meetod, kus te teete uue objekti mängust,
-kus kasutaja saab mängida läbi)*/
-
-
-// Kasutatud allikad
-// https://www.considerable.com/entertainment/games/hangman/
-
-
 package org.hangman;
 import java.util.Scanner;
 import java.util.Random;
@@ -20,10 +7,10 @@ import java.util.ArrayList;
 public class Hangman implements Keyboard{
    private static String[] words = {"apple", "banana", "programming", "thunderstorm"};
    private static Random r = new Random();
-   public static String word = words[(r.nextInt(words.length))];
-   public static int wrongGuess = 0;
-   public static String[] splitWord = word.split("");
-   public static String[] splitLength = new String[word.length()];
+   public String word = words[(r.nextInt(words.length))];
+   public int wrongGuess = 0;
+   public String[] splitWord = word.split("");
+   public String[] splitLength = new String[word.length()];
    public static ArrayList<String> wrong = new ArrayList<String>();
 
    public void play(){
@@ -42,9 +29,8 @@ public class Hangman implements Keyboard{
    @Override
    public String getInput(){
       Scanner scGuess = new Scanner(System.in);
-      String guess = scGuess.next();
-      scGuess.close();
-      return guess;
+      //scGuess.close();
+      return scGuess.next();
       
    }
 

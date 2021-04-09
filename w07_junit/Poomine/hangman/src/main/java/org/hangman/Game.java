@@ -2,51 +2,57 @@ package org.hangman;
 
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.ArrayList;
 
 
 public class Game{
-    private static int counter = 0;
+    //private static int counter = 0;
     private static Scanner scanner = new Scanner(System.in);
     private static String continu = "y";
     private static Hangman[] hangmans = new Hangman[100];
     private static Gallows[] gallowss = new Gallows[100];
     public static void main(String[] args) {
         System.out.println("Mängid poomismängu!");
-        game();
-        /*while(continu.equals("y")){
-            quest();
-        }*/
+        int counter = 0;
+        game(counter);
+        counter ++;
+        while(continu.equals("y")){
+            boolean cont = quest(counter);
+            counter ++;
+            if(!cont){
+                break;
+            }
+        }
     }
 
-   /*public static void quest() {
+    public static boolean quest(int counter) {
         System.out.println("Kas soovid uuesti mängida?");
         continu = scanner.next();
         if (continu.equals("y")){   
-            game();
-        }    
+            game(counter);
+            return true;
+        } else {
+            return false;
+        }
     }
-    */
-    public static void game() {
+    
+    public static void game(int counter) {
         hangmans[counter] = new Hangman();
         gallowss[counter] = new Gallows();
         
-        while(hangmans[counter].wrongGuess<7){
+        while(hangmans[counter].wrongGuess<8){
             render(hangmans[counter], gallowss[counter]);
             hangmans[counter].play();
             if(!(Arrays.asList(hangmans[counter].getSplitLength()).contains(null))){
                 break;
             }
         }
-        if(hangmans[counter].wrongGuess>7){
+        if(hangmans[counter].wrongGuess==8){
+            gallowss[counter].draw(hangmans[counter].wrongGuess);
             System.out.println("Kaotasid!");
             System.out.println("Õige sõna oli: "+hangmans[counter].word);
         } else if (hangmans[counter].wrongGuess<8){
             System.out.println("Võitsid!");
         }
-        counter++;
-        System.out.println(counter);
-
     }
 
     public static void render(Hangman hangman, Gallows gallows){
