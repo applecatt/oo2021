@@ -47,7 +47,7 @@ public class Game{
             }
         }
         if(hangmans[counter].wrongGuess==8){
-            gallowss[counter].draw(hangmans[counter].wrongGuess);
+            System.out.println(gallowss[counter].draw(hangmans[counter].wrongGuess));
             System.out.println("Kaotasid!");
             System.out.println("Õige sõna oli: "+hangmans[counter].word);
         } else if (hangmans[counter].wrongGuess<8){
