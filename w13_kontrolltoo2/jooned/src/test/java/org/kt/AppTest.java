@@ -49,7 +49,7 @@ public class AppTest
     {
         Joon2 joon2_3 = new Joon2(3, 2);
         int[] x = new int[]{1,2,3,4,5};
-        assertArrayEquals(Arrays.asList(5,8,11,14,17).toArray(), Arrays.asList(joon2_3.getY(x));
+        assertArrayEquals(Arrays.asList(5,8,11,14,17).toArray(), Arrays.asList(joon2_3.getY(x)).toArray());
     }
     @Test
     public void checkJoonFile(){
@@ -62,15 +62,20 @@ public class AppTest
             System.out.println(e.getMessage());
         }
         int[] array = new int[4]; 
-        for (int i = 0; i<4; i++;) {
+        for (int i = 0; i<4; i++) {
             array[i] = Integer.parseInt(line.split(",")[i]);
         }
-        Joon2 joon2_4 = new Joon2(Integer.parseInt(linearray[0]), Integer.parseInt(linearray[1]));
-        int[] x = new int[array[4]-array[3]];
-        for (int j = array[3]; j <= array[4]; j++;) {
+        JoonLiides joonfail;
+        if (array[1]==0){
+            joonfail = new Joon(array[0]);
+        } else {
+            joonfail = new Joon2(array[0], array[1]);
+        }
+        int[] x = new int[array[3]-array[2]];
+        for (int j = array[2]; j <= array[3]; j++) {
             x[j] = j;
         }
-        assert
+        assertArrayEquals(Arrays.asList(joonfail.getY(x)).toArray(), Arrays.asList(56,61,66,71,76,81).toArray());
     }
 
 

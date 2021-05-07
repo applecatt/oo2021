@@ -14,7 +14,7 @@ public class Joon2 implements JoonLiides{
         int y = a*x +c ;
         return y;
     }
-
+    @Override
     public int[] getY(int[] x){
         int[] y = new int[x.length];
         for (int  i = 0; i< x.length; i++) {
