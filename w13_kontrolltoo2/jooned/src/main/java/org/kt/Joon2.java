@@ -1,26 +1,28 @@
 package org.kt;
 
 public class Joon2 implements JoonLiides{
-    public double a;
-    public double c;
+    public int a;
+    public int c;
 
-    public Joon2(double a, double c){
+    public Joon2(int a, int c){
         this.a = a;
         this.c = c;
     }
 
     @Override
-    public double getY(double x) {
-        double y = a*x +c ;
+    public int getY(int x) {
+        int y = a*x +c ;
         return y;
     }
 
-    public double[] getY(double[] x){
-        double[] y = new double[x.length];
+    public int[] getY(int[] x){
+        int[] y = new int[x.length];
         for (int  i = 0; i< x.length; i++) {
             y[i] = a*x[i]+c;
         }
         return y;
     }
+
+    
     
 }

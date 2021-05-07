@@ -5,15 +5,15 @@ package org.kt;
  *
  */
 public class Joon implements JoonLiides {
-    public double a;
+    public int a;
 
-    public Joon(double a){
+    public Joon(int a){
         this.a = a;
     }
 
     @Override
-    public double getY(double x) {
-        double y = a*x;
+    public int getY(int x) {
+        int y = a*x;
         return y;
     }
 
