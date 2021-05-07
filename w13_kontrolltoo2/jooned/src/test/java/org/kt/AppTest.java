@@ -53,16 +53,24 @@ public class AppTest
     }
     @Test
     public void checkJoonFile(){
-        try (Scanner scanner = new Scanner(new File("joon.txt"));
-            
+        String line = null;
+        try (Scanner scanner = new Scanner(new File("joon.txt"))){
             while (scanner.hasNextLine()){
-                line = scanner.nextLine();
-
-            
+                line += scanner.nextLine();
             }
         } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         }
+        int[] array = new int[4]; 
+        for (int i = 0; i<4; i++;) {
+            array[i] = Integer.parseInt(line.split(",")[i]);
+        }
+        Joon2 joon2_4 = new Joon2(Integer.parseInt(linearray[0]), Integer.parseInt(linearray[1]));
+        int[] x = new int[array[4]-array[3]];
+        for (int j = array[3]; j <= array[4]; j++;) {
+            x[j] = j;
+        }
+        assert
     }
 
 
